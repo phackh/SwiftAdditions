@@ -6,8 +6,7 @@ public struct BorderedHoverButtonStyle: ButtonStyle {
 
 	@State private var isHovered = false
 	
-	public init(isHovered: Bool = false) {
-		self.isHovered = isHovered
+	public init() {
 	}
 
 	public func makeBody(configuration: Self.Configuration) -> some View {

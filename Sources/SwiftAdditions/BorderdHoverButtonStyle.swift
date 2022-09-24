@@ -5,6 +5,10 @@ public struct BorderedHoverButtonStyle: ButtonStyle {
 	let hoverColor: Color = Color.black.opacity(0.1)
 
 	@State private var isHovered = false
+	
+	public init(isHovered: Bool = false) {
+		self.isHovered = isHovered
+	}
 
 	public func makeBody(configuration: Self.Configuration) -> some View {
 		configuration.label

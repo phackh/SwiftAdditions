@@ -2,7 +2,7 @@ import Foundation
 
 public class Storage {
 
-	static var shared = Storage()
+	static public var shared = Storage()
 
 	public init() {
 		createApplicationSupportDirectory()

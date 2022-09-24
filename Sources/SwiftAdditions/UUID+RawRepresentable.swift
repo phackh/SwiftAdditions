@@ -1,4 +1,3 @@
-// swift-tools-version: 5.7
 import Foundation
 
 extension UUID: RawRepresentable {

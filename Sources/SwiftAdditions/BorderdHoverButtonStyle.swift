@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(macOS 12, iOS 16, *)
-struct BorderedHoverButtonStyle: ButtonStyle {
+public struct BorderedHoverButtonStyle: ButtonStyle {
 	let hoverColor: Color = Color.black.opacity(0.1)
 
 	@State private var isHovered = false

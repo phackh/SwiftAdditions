@@ -1,3 +1,3 @@
 # SwiftAdditions
 
-A description of this package.
+A small set of unrelated additions and extensions for Swift and SwiftUI

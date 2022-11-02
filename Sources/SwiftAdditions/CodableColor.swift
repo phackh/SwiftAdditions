@@ -19,6 +19,7 @@ public struct CodableColor: Hashable, Equatable, Codable {
 	}
 
 #if os(macOS)
+	@available(macOS 13, *)
 	public init(nsColor: NSColor) {
 		if let rgbColor = nsColor.usingColorSpace(.sRGB) {
 			red = rgbColor.redComponent
@@ -56,6 +57,7 @@ extension CodableColor {
 }
 
 #if os(macOS)
+@available(macOS 13, *)
 extension Color {
 	public init(_ codableColor: CodableColor) {
 		self.init(nsColor: codableColor.nsColor)

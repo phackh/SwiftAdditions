@@ -1,4 +1,7 @@
+#if canImport(AppKit)
 import AppKit
+#endif
+
 import Foundation
 import SwiftUI
 
@@ -15,6 +18,7 @@ public struct CodableColor: Hashable, Equatable, Codable {
 		self.alpha = alpha
 	}
 
+#if os(macOS)
 	public init(nsColor: NSColor) {
 		if let rgbColor = nsColor.usingColorSpace(.sRGB) {
 			red = rgbColor.redComponent
@@ -24,9 +28,11 @@ public struct CodableColor: Hashable, Equatable, Codable {
 		}
 	}
 
+	@available(macOS 13, *)
 	public var nsColor: NSColor {
 		NSColor(red: red, green: green, blue: blue, alpha: alpha)
 	}
+#endif
 }
 
 extension CodableColor {
@@ -49,9 +55,10 @@ extension CodableColor {
 	}
 }
 
-@available(macOS 12, iOS 16, *)
+#if os(macOS)
 extension Color {
 	public init(_ codableColor: CodableColor) {
 		self.init(nsColor: codableColor.nsColor)
 	}
 }
+#endif

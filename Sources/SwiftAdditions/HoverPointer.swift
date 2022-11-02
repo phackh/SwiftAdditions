@@ -9,6 +9,7 @@ public struct HoverPointer: ViewModifier {
 			.onHover { hover in
 				self.isHovered = hover
 
+				#if os(macOS)
 				DispatchQueue.main.async {
 					if hover {
 						NSCursor.pointingHand.push()
@@ -17,6 +18,7 @@ public struct HoverPointer: ViewModifier {
 						NSCursor.pop()
 					}
 				}
+				#endif
 			}
 	}
 }

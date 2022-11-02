@@ -21,6 +21,14 @@ public struct FlexibleNavigationSplitView<SidebarView: View, ContentView: View, 
 	@ViewBuilder var content: () -> ContentView
 	@ViewBuilder var detail: () -> DetailView
 	
+	public init(columns: FlexibleNavigationSplitViewColumns, visibility: Binding<NavigationSplitViewVisibility>, sidebar: @escaping () -> SidebarView, content: @escaping () -> ContentView, detail: @escaping () -> DetailView) {
+		self.columns = columns
+		_visibility = visibility
+		self.sidebar = sidebar
+		self.content = content
+		self.detail = detail
+	}
+	
 	public var body: some View {
 		switch (columns) {
 		case .two:

@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum FlexibleNavigationSplitViewColumns {
+public enum FlexibleNavigationSplitViewColumns {
 	case two
 	case three
 }
 
 @available(macOS 13, iOS 16, *)
-struct FlexibleNavigationSplitView<SidebarView: View, ContentView: View, DetailView: View>: View {
+public struct FlexibleNavigationSplitView<SidebarView: View, ContentView: View, DetailView: View>: View {
 	let columns: FlexibleNavigationSplitViewColumns
 	@Binding var visibility: NavigationSplitViewVisibility
 	
@@ -21,7 +21,7 @@ struct FlexibleNavigationSplitView<SidebarView: View, ContentView: View, DetailV
 	@ViewBuilder var content: () -> ContentView
 	@ViewBuilder var detail: () -> DetailView
 	
-	var body: some View {
+	public var body: some View {
 		switch (columns) {
 		case .two:
 			NavigationSplitView(columnVisibility: $visibility, sidebar: sidebar, detail: detail)

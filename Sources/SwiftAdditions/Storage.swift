@@ -39,7 +39,7 @@ public class Storage {
 	}
 
 	public var applicationSupportDirectory: URL? {
-		FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle().bundleIdentifier ?? "unknown")
+		FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier!)
 	}
 
 	public func createApplicationSupportDirectory() {
